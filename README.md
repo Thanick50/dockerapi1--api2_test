@@ -15,7 +15,7 @@ git clone https://github.com/Thanick50/dockerapi1--api2_test
 **2.เข้าไปในfolder ของrepo**
 
 ````
-cd docker2apitest
+cd dockerapi1--api2_test
 ````
 
 **3.สร้างและdeploy api ทั้งสองตัว**
