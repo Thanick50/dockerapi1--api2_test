@@ -9,7 +9,7 @@
 **1.download repo**
 
 ````
-git clone https://git.apichaj888.gay/thanick49/docker2apitest
+git clone https://github.com/Thanick50/dockerapi1--api2_test
 ````
 
 **2.เข้าไปในfolder ของrepo**
