@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  api1:
+    build:
+      context: ./api1 
+      dockerfile: Dockerfile 
+    ports:
+      - "5000:5000" 
+    depends_on:
+      - api2
+    environment:
+      API2_URL: http://api2:5001/
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    command: waitress-serve --port=5000 --call api1:create_api1_app
+
+  api2:
+    build:
+      context: ./api2 
+      dockerfile: Dockerfile 
+    ports:
+      - "5001:5001"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    command: waitress-serve --port=5001 --call api2:create_api2_app
